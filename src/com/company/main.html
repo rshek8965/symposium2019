@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+function initialize()
+{
+    theOut = document.getElementById("output");
+    info = location.search;
+    info = info.substring(1);
+    array = info.split("&");
+        for (var i = 0; i < array.length; i++)
+        {
+        array[i] = array[i].split("=");
+        }
+    firstName = array[0][1];
+    lastName = array[1][1];
+    document.getElementById("output").innerHTML = "Welcome, " + firstName + " " + lastName + "!";
+
+}
+</script>
+
+<body onload = "initialize();">
+
+<div id = "output"></div>
+
+</body>
+</html>
